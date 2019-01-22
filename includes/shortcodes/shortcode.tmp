@@ -1,0 +1,16 @@
+<?php
+
+function rng_shortcode_button( $atts, $content ) {
+	$array_atts = shortcode_atts(
+	array(
+		'theme'	 => 'btn-aqua',
+		'link'	 => '#',
+		'title'	 => ''
+	), $atts, 'btn'
+	);
+	return '<a href="" title="" class="btn ' . $array_atts[ 'theme' ] . '" >' . $content . '</a>';
+}
+
+add_shortcode( 'btn', 'rng_shortcode_button' );
+
+//[btn theme="" link="" title=""]content[/btn]
